@@ -36,23 +36,23 @@ public class TestShooter extends LinearOpMode {
             motor2.setPower(motorPower);
 
             // Left bumper: increase motor speed
-            if (gamepad1.left_bumper) {
+            if (gamepad1.leftBumperWasPressed()) {
                 motorPower -= 0.05;
             }
 
             // Right bumper: decrease motor speed
-            if (gamepad1.right_bumper) {
+            if (gamepad1.rightBumperWasPressed()) {
                 motorPower += 0.05;
             }
 
             // Y: increase servo position
-            if (gamepad1.y) {
-                servoPosition += 0.05;
+            if (gamepad1.yWasPressed()) {
+                servoPosition += 0.005;
             }
 
             // A: decrease servo position
-            if (gamepad1.a) {
-                servoPosition -= 0.05;
+            if (gamepad1.aWasPressed()) {
+                servoPosition -= 0.005;
             }
 
             servo1.setPosition(servoPosition);
